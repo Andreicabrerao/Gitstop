@@ -7,11 +7,7 @@ import Login from './Client/Containers/Login';
 import Mention from './Client/Containers/Mention';
 import User from './Client/Containers/User';
 import Repos from './Client/Containers/Repos';
-<<<<<<< HEAD
-
-=======
 // require('dotenv').config()
->>>>>>> 8fee63efdd0fc689e20bd79c90d4b3c6685ab454
 
 const App = () => {
   return (

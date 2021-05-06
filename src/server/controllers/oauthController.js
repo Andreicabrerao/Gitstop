@@ -33,7 +33,7 @@ oauthController.addUser = async (req, res, next) => {
   const octokit = new Octokit({ auth: token });
   let data;
   data = await octokit.request("GET /user/repos")
-  .then(() => {
+  .then((data) => {
     console.log('data', data);
     next();
   })
