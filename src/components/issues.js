@@ -5,7 +5,7 @@ import { Ionicons, Entypo, AntDesign, Foundation  } from '@expo/vector-icons';
 
 export default (props) => {
   const [visible, setVisible] = useState(false);
-  const [comments, setComments] = useState([{id: 1 , body: 'hello heloo heheheheheh ee i llloooo f  this is test 1 for a really long comment to see how it behaves'},{id:'This is the second Repo', body: 'this is test 2'},{id:'This is the third Repo', body: 'this is test 3'}]) 
+  const [comments, setComments] = useState([{id: 1 , body: 'bla bla heloo heheheheheh ee i llloooo f  this is test 1 for a really long comment to see how it behaves'},{id:'This is the second Repo', body: 'this is test 2'},{id:'This is the third Repo', body: 'this is test 3'}]) 
   const [user, setUser]= useState([{user: 'Geo', }, {User: 'Andrei'}])
   const [text, setText] = React.useState("");
 
