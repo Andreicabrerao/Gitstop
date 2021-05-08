@@ -11,18 +11,15 @@ import Repos from './Client/Containers/Repos';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <NativeRouter>
-          <View style={styles.container}>
-            
-              <Route exact path="/" component={Login}></Route>
-              <Route path="/home" component={Home}></Route>
-              <Route path="/mentions" component={Mention}></Route>
-              <Route path="/user" component={User}></Route>
-              <Route path="/repos/:id" component={Repos}></Route>
-          </View>
-      </NativeRouter>
-    </SafeAreaProvider>
+    <NativeRouter>
+        <View style={styles.container}>
+            <Route exact path="/" component={Login}></Route>
+            <Route path="/home" component={Home}></Route>
+            <Route path="/mentions" component={Mention}></Route>
+            <Route path="/user" component={User}></Route>
+            <Route path="/repos/:id" component={Repos}></Route>
+        </View>
+    </NativeRouter>
   );
 }
 
