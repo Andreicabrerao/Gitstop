@@ -22,6 +22,7 @@ oauthController.authWithGithub = (req, res, next) => {
   axios.post('https://github.com/login/oauth/access_token', body, opts)
     .then((result) => result.data.access_token)
     .then((_token) => {
+      //res.locals.token = _token;
       token = _token;
       console.log('My token:', token);
       next();
@@ -29,15 +30,56 @@ oauthController.authWithGithub = (req, res, next) => {
     .catch((err) => res.status(500).json({ message: err.message }));
 };
 
-oauthController.addUser = async (req, res, next) => {
+oauthController.verifyData = async (req, res, next) => {
   const octokit = new Octokit({ auth: token });
-  let data;
-  data = await octokit.request("GET /user/repos")
-  .then((data) => {
-    console.log('data', data);
-    next();
-  })
-  .catch((err) => res.status(500).json({ message: err.message }));
+  const response = await octokit.graphql(
+    `query {
+      viewer {
+        login
+        repositories(last: 3, affiliations: OWNER, orderBy: {field: UPDATED_AT, direction: ASC}) {
+          nodes {
+            id
+            name
+            parent {
+              id
+              name
+              issues(last: 3) {
+                nodes {
+                  id
+                  body
+                  comments(last: 3) {
+                    nodes {
+                      body
+                      id
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }`,
+  )
+    .then((data) => {
+      console.log('username', data.viewer.login);
+      // console.log('repos', data.viewer.repositories.nodes);
+      data.viewer.repositories.nodes.forEach((repo) => {
+        console.log('repo', repo.parent.name);
+        if (repo.parent.issues.nodes.length !== 0) {
+          repo.parent.issues.nodes.forEach((issue) => {
+            console.log('issue', issue.body);
+            if (issue.comments.nodes.length !== 0) {
+              issue.comments.nodes.forEach((comment) => {
+                console.log('comment', comment.body);
+              });
+            }
+          });
+        }
+      });
+      next();
+    })
+    .catch((err) => res.status(500).json({ message: err.message }));
 };
 
 module.exports = oauthController;

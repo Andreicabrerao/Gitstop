@@ -36,12 +36,34 @@ export default (props) => {
   const updateText = (input) => {
     setText(input)
   }
+  const getComments = (text) => {
+    //API post to comment database
+    /*
+    setComments([...comments, text])
+    fetch(/getRepos ){
+      method: 'GET',
+      headers: {
+        accept: 'application/jason',
+        'content-Type': application/json
+      },
+      body: JSON.stringify({
+        id: ??
+        comment: text
+      })
+      .then((res)=>res.json())
+      .then((res) => {setComments([...comments, text])})
+      .catch((error)=>{
+        console.log(error)
+      })
+    }
+    */
+  }
 
   const updateComments = (text) => {
     //API post to comment database
     /*
     setComments([...comments, text])
-    fetch(/route ){
+    fetch(/commentRoute ){
       method: 'POST',
       headers: {
         accept: 'application/jason',
