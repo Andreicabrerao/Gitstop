@@ -20,7 +20,7 @@ const discovery = {
 };
 
 const config = {
-  redirectUrl: 'com.my.auth.app://oauthredirect',
+  redirectUrl: 'ios://oauthredirect',
   clientId: '72e3b30caf0e91e8a764',
   clientSecret: 'a3c8547c9983f3abc6ac2e3878369a89b94a0e5c',
   scopes: ['identity'],
