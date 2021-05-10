@@ -1,13 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Button, Text, View, StyleSheet, Image ,TouchableOpacity, Alert} from 'react-native';
+import { Button, Text, View, StyleSheet, Image ,TouchableOpacity, Alert, SafeAreaView} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
 import {AuthSession} from 'expo';
-import { authorize } from 'react-native-app-auth';
-=======
-import { Button, Text, View, StyleSheet, Image ,TouchableOpacity, Alert, SafeAreaView} from 'react-native';
->>>>>>> ddd2fc071bc9a72cea1be8fce6bb8004d8215b3a
+//import { authorize } from 'react-native-app-auth';
 
 // require('dotenv').config()
 
@@ -35,7 +31,7 @@ const config = {
     revocationEndpoint:
       'https://github.com/settings/connections/applications/72e3b30caf0e91e8a764'
   }
-};  
+};   
 
 export default ({history}) => {
 
@@ -57,31 +53,6 @@ export default ({history}) => {
   };
 
   return (
-<<<<<<< HEAD
-    <View style= {styles.container}>
-      <Text>Welcome to GitStop! 
-       <Text>{'\n'}</Text>
-        This is your teams shop to work with fixing those flats and bumps in your code. Work collaboratively and keep track of all present issues in your repositories to stay ahead of the curve. 
-      </Text>
-      <TouchableOpacity style={styles.loginButton} activeOpacity={0.5} onPress={() => authState()}>
-        <Image 
-          source={require('../github-icon.png')} 
-          style={styles.ImageIconStyle} 
-          />
-        <Text style={styles.TextStyle}> Login Using Github </Text>
-
-      </TouchableOpacity>
-{/* 
-      <Button
-      disabled={!request}
-      title="Login"
-      onPress={() => {
-        promptAsync();
-        }}
-    />*/}
-      <Button title="Home Page" onPress={() => history.push("/home")}/> 
-    </View> 
-=======
     <SafeAreaView style= {styles.container}>
       <View style = {styles.introBox}>
         <Text style = {styles.label}>Welcome to GitStop!</Text>
@@ -95,7 +66,6 @@ export default ({history}) => {
         </TouchableOpacity>
       </View>
     </SafeAreaView> 
->>>>>>> ddd2fc071bc9a72cea1be8fce6bb8004d8215b3a
   );
 };
 

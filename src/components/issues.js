@@ -5,18 +5,12 @@ import { Ionicons, Entypo, AntDesign, Foundation  } from '@expo/vector-icons';
 
 export default (props) => {
   const [visible, setVisible] = useState(false);
-<<<<<<< HEAD
-  const [comments, setComments] = useState([{id: 1 , body: 'bla bla heloo heheheheheh ee i llloooo f  this is test 1 for a really long comment to see how it behaves'},{id:'This is the second Repo', body: 'this is test 2'},{id:'This is the third Repo', body: 'this is test 3'}]) 
-  const [user, setUser]= useState([{user: 'Geo', }, {User: 'Andrei'}])
-  const [text, setText] = React.useState("");
-=======
   const [comments, setComments] = useState([{id: 1 , body: 'hello heloo heheheheheh ee i llloooo f  this is test 1 for a really long comment to see how it behaves'},{id:'This is the second Repo', body: 'this is test 2'},{id:'This is the third Repo', body: 'this is test 3'}]) 
   // const [user, setUser]= useState([{user: 'Geo', }, {User: 'Andrei'}])
   const [text, setText] = useState("");
   const [commentText, setCommentText] =useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const [modalID, setModalID] = useState('');
->>>>>>> ddd2fc071bc9a72cea1be8fce6bb8004d8215b3a
 
   const toggleOverlay = () => {
     setVisible(!visible);
@@ -218,32 +212,7 @@ const styles = StyleSheet.create({
   textStyle: {
     color: '#e0fbfc'
   }
-<<<<<<< HEAD
-  const getComments = (text) => {
-    //API post to comment database
-    /*
-    setComments([...comments, text])
-    fetch(/getRepos ){
-      method: 'GET',
-      headers: {
-        accept: 'application/jason',
-        'content-Type': application/json
-      },
-      body: JSON.stringify({
-        id: ??
-        comment: text
-      })
-      .then((res)=>res.json())
-      .then((res) => {setComments([...comments, text])})
-      .catch((error)=>{
-        console.log(error)
-      })
-    }
-    */
-  }
-=======
 });
->>>>>>> ddd2fc071bc9a72cea1be8fce6bb8004d8215b3a
 
 
   // const updateComments = (text) => {
